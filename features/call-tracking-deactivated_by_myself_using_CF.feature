@@ -1,12 +1,7 @@
+Feature:  Call Tracking Deactivated - by myself using CF platform
 
-Feature:
-  Call Tracking Deactivated - by myself using CF platform
+  Scenario: An email should be sent to the business user indicating that the call tracking service was deactivated
 
-  Scenario:
-    The email is sent to the business user indicating that the call tracking service was deactivated
-
-    Given the user has activate
-    When the user deactivate call tracking
-    Then a email is sent the user with this message
-| Message               |
-| bla bla balai dhoiehfbu |
+    Given that I have call tracking active
+    When I deactivate call tracking
+    Then I should receive an email with the deactivation message
